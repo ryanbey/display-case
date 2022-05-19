@@ -1,9 +1,6 @@
-// .env variables MONGODB_URI
+const MongoClient = require('mongodb').MongoClient;
 const dotenv = require('dotenv');
 dotenv.config();
-
-// Database
-const MongoClient = require('mongodb').MongoClient;
 
 let _client;
 let _collection;

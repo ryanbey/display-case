@@ -9,10 +9,10 @@ content-type: application/json
 {
    "carNumber": "99",
    "make": "Chevrolet",
-   "model": "Camaro ZL1",
-   "year": "2022",
+   "model": "Monte Carlo",
+   "year": "1987",
    "scale": "1:24",
-   "sponsor": "Jimmy John's",
+   "sponsor": "Yummy Snacks",
    "driverFirst": "Jim-Bob",
    "driverLast": "Johnsonson",
    "imageUrl": ""
@@ -30,10 +30,10 @@ content-type: application/json
 {
    "carNumber": "99",
    "make": "Chevrolet",
-   "model": "Camaro ZL1",
-   "year": "2022",
+   "model": "Monte Carlo",
+   "year": "1987",
    "scale": "1:24",
-   "sponsor": "Jimmy John's",
+   "sponsor": "Yummy Snacks",
    "driverFirst": "Jim-Bob",
    "driverLast": "Johnsonson",
    "imageUrl": ""
