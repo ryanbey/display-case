@@ -7,7 +7,7 @@ const doc = {
    },
    // Test Locally: localhost:3000
    // Use Heroku: display-case.herokuapp.com
-   host: 'localhost:3000',
+   host: 'display-case.herokuapp.com',
    schemes: ['https']
 };
 
