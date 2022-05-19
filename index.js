@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
 app.use('/', require('./routes'));
+app.use(express.static(__dirname + '/public')); // Gets CSS working
 
 connect.initDatabase();
 
