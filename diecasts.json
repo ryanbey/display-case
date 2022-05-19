@@ -1,6 +1,5 @@
 [
    {
-      "diecast_id": 1,
       "carNumber": "29",
       "make": "Chevrolet",
       "model": "Monte Carlo",
@@ -12,7 +11,6 @@
       "imageUrl": ""
    },
    {
-      "diecast_id": 2,
       "carNumber": "29",
       "make": "Chevrolet",
       "model": "Impala",

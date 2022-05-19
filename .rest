@@ -1,0 +1,40 @@
+### LOCAL TESTS ###
+
+### Get all diecasts
+GET http://localhost:3000/diecasts
+### Create diecast
+POST http://localhost:3000/diecasts HTTP/1.1
+content-type: application/json
+
+{
+   "carNumber": "99",
+   "make": "Chevrolet",
+   "model": "Camaro ZL1",
+   "year": "2022",
+   "scale": "1:24",
+   "sponsor": "Jimmy John's",
+   "driverFirst": "Jim-Bob",
+   "driverLast": "Johnsonson",
+   "imageUrl": ""
+}
+
+
+### HEROKU TESTS ###
+
+### Get all diecasts
+GET https://display-case.herokuapp.com/diecasts
+### Create diecast
+POST http://display-case.herokuapp/diecasts HTTP/1.1
+content-type: application/json
+
+{
+   "carNumber": "99",
+   "make": "Chevrolet",
+   "model": "Camaro ZL1",
+   "year": "2022",
+   "scale": "1:24",
+   "sponsor": "Jimmy John's",
+   "driverFirst": "Jim-Bob",
+   "driverLast": "Johnsonson",
+   "imageUrl": ""
+}
