@@ -1,0 +1,17 @@
+[
+   {
+      "name": "NASCAR: The Complete History",
+      "type": "book",
+      "description": "Big history book about cars racing in circles."
+   },
+   {
+      "name": "Kevin Harvick Lanyard",
+      "type": "lanyard",
+      "description": "Kevin Harvick lanyard used for race tickets and passes."
+   },
+   {
+      "name": "Chase Elliot Lanyard",
+      "type": "lanyard",
+      "description": "Chase Elliot lanyard used for race tickets and passes."
+   }   
+]
