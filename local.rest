@@ -36,25 +36,3 @@ content-type: application/json
 }
 ### Delete contact (replace ID)
 DELETE http://localhost:3000/diecasts/6290087878d42a2b68a9887b HTTP/1.1
-
-### HEROKU TESTS ###
-
-### Get all diecasts
-GET https://display-case.herokuapp.com/diecasts
-### Get one diecast
-GET https://display-case.herokuapp.com/628695fcc6e35cafb6ecdf7c
-### Create diecast
-POST https://display-case.herokuapp.com/diecasts HTTP/1.1
-content-type: application/json
-
-{
-   "carNumber": "99",
-   "make": "Chevrolet",
-   "model": "Monte Carlo",
-   "year": "1987",
-   "scale": "1:24",
-   "sponsor": "Yummy Snacks",
-   "driverFirst": "Jim-Bob",
-   "driverLast": "Johnsonson",
-   "imageUrl": ""
-}
