@@ -2,6 +2,8 @@
 
 ### Get all diecasts
 GET http://localhost:3000/diecasts
+### Get one diecast
+GET http://localhost:3000/diecasts/628695fcc6e35cafb6ecdf7c
 ### Create diecast
 POST http://localhost:3000/diecasts HTTP/1.1
 content-type: application/json
@@ -17,12 +19,30 @@ content-type: application/json
    "driverLast": "Johnsonson",
    "imageUrl": ""
 }
+### Update diecast
+PUT http://localhost:3000/diecasts/6290087878d42a2b68a9887b HTTP/1.1
+content-type: application/json
 
+{
+   "carNumber": "1",
+   "make": "Ford",
+   "model": "Thunderbird",
+   "year": "1987",
+   "scale": "1:24",
+   "sponsor": "Disgusting Trash Snacks",
+   "driverFirst": "Henry",
+   "driverLast": "Dickenson",
+   "imageUrl": ""
+}
+### Delete contact (replace ID)
+DELETE http://localhost:3000/diecasts/6290087878d42a2b68a9887b HTTP/1.1
 
 ### HEROKU TESTS ###
 
 ### Get all diecasts
 GET https://display-case.herokuapp.com/diecasts
+### Get one diecast
+GET https://display-case.herokuapp.com/628695fcc6e35cafb6ecdf7c
 ### Create diecast
 POST https://display-case.herokuapp.com/diecasts HTTP/1.1
 content-type: application/json

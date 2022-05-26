@@ -5,10 +5,10 @@
     "description": "API for NASCAR colectibles stored in my display case.",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "display-case.herokuapp.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/": {
@@ -20,6 +20,13 @@
             "description": "OK"
           }
         }
+      }
+    },
+    "/api-docs": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
       }
     },
     "/diecasts/": {
@@ -75,6 +82,82 @@
         "responses": {
           "201": {
             "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/diecasts/{id}": {
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "carNumber": {
+                  "example": "any"
+                },
+                "make": {
+                  "example": "any"
+                },
+                "model": {
+                  "example": "any"
+                },
+                "year": {
+                  "example": "any"
+                },
+                "scale": {
+                  "example": "any"
+                },
+                "sponsor": {
+                  "example": "any"
+                },
+                "driverFirst": {
+                  "example": "any"
+                },
+                "driverLast": {
+                  "example": "any"
+                },
+                "imageUrl": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
           },
           "500": {
             "description": "Internal Server Error"
