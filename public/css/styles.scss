@@ -4,9 +4,22 @@ $gray1: #121212;
 $black: black;
 $white: white;
 $white-text: #f7f7f7;
+$mint: #009e7c;
 
 body {
    font-family: "Poppins", sans-serif;
    background-color: $gray1;
    color: $white-text;
+}
+
+.test-link {
+   background-color: $mint;
+   color: $white;
+   border-radius: 6px;
+   padding: .5em 1em;
+   text-decoration: none;
+   transition: background-color 200ms;
+   &:hover {
+      background-color: lighten($mint, 5%)
+   }
 }

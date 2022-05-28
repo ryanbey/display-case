@@ -5,4 +5,16 @@ body {
   color: #f7f7f7;
 }
 
+.test-link {
+  background-color: #009e7c;
+  color: white;
+  border-radius: 6px;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  transition: background-color 200ms;
+}
+.test-link:hover {
+  background-color: #00b890;
+}
+
 /*# sourceMappingURL=styles.css.map */
