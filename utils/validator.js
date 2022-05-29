@@ -10,6 +10,7 @@ function checkDiecast(diecast) {
             diecast.driverFirst > 30 || diecast.driverLast > 30) {
       return 'Please check character lengths';
    }
+   // Nothing failed
    else {
       return 'valid';
    }

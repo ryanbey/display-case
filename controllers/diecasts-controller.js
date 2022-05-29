@@ -42,8 +42,8 @@ const addDiecast = async (req, res) => {
          imageUrl: req.body.imageUrl, // not required
       };
 
+      // Validate
       let validatorMessage = validator.checkDiecast(diecast);
-
       if (validatorMessage != "valid") {
          res.status(400).send({ message: validatorMessage });
          return;
@@ -76,8 +76,8 @@ const editDiecast = async (req, res) => {
          imageUrl: req.body.imageUrl,
       };
       
+      // Validate
       let validatorMessage = validator.checkDiecast(diecast);
-
       if (validatorMessage != "valid") {
          res.status(400).send({ message: validatorMessage });
          return;
