@@ -1,4 +1,5 @@
 const connect = require('../db/connect');
+const validator = require('../utils/validator')
 const ObjectId = require('mongodb').ObjectId;
 
 // Get all diecasts
@@ -9,7 +10,7 @@ const getDiecasts = async (req, res) => {
          res.status(200).json(documents);
       });
    } catch (err) {
-      res.staus(500).json(err);
+      res.status(500).json(err);
    }
 };
 
@@ -22,12 +23,12 @@ const getDiecast = async (req, res) => {
          res.status(200).json(documents[0]);
       });
    } catch (err) {
-      res.staus(500).json(err);
+      res.status(500).json(err);
    }
 };
 
 // Add a new diecast
-const addDiecast = async (req, res) => {
+const addDiecast = async (req, res) => {   
    try {
       const diecast = {
          carNumber: req.body.carNumber,
@@ -40,7 +41,7 @@ const addDiecast = async (req, res) => {
          driverLast: req.body.driverLast,
          imageUrl: req.body.imageUrl,
       };
-
+      
       const response = await connect.getCollection().insertOne(diecast);
 
       if (response.acknowledged) {
@@ -49,7 +50,7 @@ const addDiecast = async (req, res) => {
          res.status(500).json(response.error || 'Error creating the diecast.');
       }
    } catch (err) {
-      res.staus(500).json(err);
+      res.status(500).json(err);
    }
 };
 
@@ -77,7 +78,7 @@ const editDiecast = async (req, res) => {
          res.status(500).json(response.error || 'Error updating diecast');
       }
    } catch (err) {
-      res.staus(500).json(err);
+      res.status(500).json(err);
    }
 };
 
@@ -92,7 +93,7 @@ const deleteDiecast = async (req, res) => {
           res.status(500).json(response.error || 'Error deleting contact');
       }
    } catch (err) {
-      res.staus(500).json(err);
+      res.status(500).json(err);
    }
 };
 
