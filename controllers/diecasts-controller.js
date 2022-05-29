@@ -74,7 +74,14 @@ const editDiecast = async (req, res) => {
          driverFirst: req.body.driverFirst,
          driverLast: req.body.driverLast,
          imageUrl: req.body.imageUrl,
-      };      
+      };
+      
+      let validatorMessage = validator.checkDiecast(diecast);
+
+      if (validatorMessage != "valid") {
+         res.status(400).send({ message: validatorMessage });
+         return;
+      }
       
       const diecastId = new ObjectId(req.params.id);
       const response = await connect.getCollection().replaceOne({ _id: diecastId }, diecast);
