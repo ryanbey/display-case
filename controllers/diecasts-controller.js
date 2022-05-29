@@ -39,8 +39,15 @@ const addDiecast = async (req, res) => {
          sponsor: req.body.sponsor,
          driverFirst: req.body.driverFirst,
          driverLast: req.body.driverLast,
-         imageUrl: req.body.imageUrl,
+         imageUrl: req.body.imageUrl, // not required
       };
+
+      let validatorMessage = validator.checkDiecast(diecast);
+
+      if (validatorMessage != "valid") {
+         res.status(400).send({ message: validatorMessage });
+         return;
+      }
       
       const response = await connect.getCollection().insertOne(diecast);
 

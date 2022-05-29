@@ -9,7 +9,7 @@ POST http://localhost:3000/diecasts HTTP/1.1
 content-type: application/json
 
 {
-   "carNumber": "123",
+   "carNumber": "23",
    "make": "Chevrolet",
    "model": "Monte Carlo",
    "year": "1987",
@@ -35,4 +35,4 @@ content-type: application/json
    "imageUrl": ""
 }
 ### Delete contact (replace ID)
-DELETE http://localhost:3000/diecasts/6292b5939baae08d3086c6f6 HTTP/1.1
+DELETE http://localhost:3000/diecasts/6292c60f10ff417b8e7c35bf HTTP/1.1
