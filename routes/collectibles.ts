@@ -1,5 +1,5 @@
 const collectibleRoutes = require('express').Router();
-const collectiblesController = require('../controllers/collectibles-controller');
+const collectiblesController = require('../controllers/collectibles-controller.ts');
 
 collectibleRoutes.get('/', collectiblesController.getCollectibles);        // Get all collectibles
 collectibleRoutes.get('/:id', collectiblesController.getCollectible)       // Get one collectible

@@ -1,5 +1,5 @@
-const connectDiecasts = require('../db/connect');
-const validatorDiecasts = require('../utils/validator')
+const connectDiecasts = require('../db/connect.ts');
+const validatorDiecasts = require('../utils/validator.ts')
 const ObjectIdDiecasts = require('mongodb').ObjectId;
 
 // Get all diecasts

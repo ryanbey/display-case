@@ -1,5 +1,5 @@
-const connectCollectibles = require('../db/connect');
-const validatorCollectibles = require('../utils/validator')
+const connectCollectibles = require('../db/connect.ts');
+const validatorCollectibles = require('../utils/validator.ts')
 const ObjectIdCollectbiles = require('mongodb').ObjectId;
 
 // Get all collectibles

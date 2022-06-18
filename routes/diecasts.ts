@@ -1,5 +1,5 @@
 const diecastRoutes = require('express').Router();
-const diecastsController = require('../controllers/diecasts-controller');
+const diecastsController = require('../controllers/diecasts-controller.ts');
 
 diecastRoutes.get('/', diecastsController.getDiecasts);        // Get all diecasts
 diecastRoutes.get('/:id', diecastsController.getDiecast)       // Get one diecast
