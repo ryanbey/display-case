@@ -13,7 +13,7 @@ content-type: application/json
    "description": "Decription for Test Collectible"
 }
 ### Update collectible
-PUT http://localhost:3000/collectibles/6290087878d42a2b68a9887b HTTP/1.1
+PUT http://localhost:3000/collectibles/62ae40be4564bf038744fd3e HTTP/1.1
 content-type: application/json
 
 {
@@ -21,4 +21,4 @@ content-type: application/json
    "description": "Decription for Test Collectible EDITED"
 }
 ### Delete collectible (replace ID)
-DELETE http://localhost:3000/collectibles/62ae3d0b310d9d3adb67f033 HTTP/1.1
+DELETE http://localhost:3000/collectibles/62ae40be4564bf038744fd3e HTTP/1.1

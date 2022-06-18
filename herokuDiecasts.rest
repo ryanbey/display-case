@@ -35,4 +35,4 @@ content-type: application/json
    "imageUrl": ""
 }
 ### Delete contact (replace ID)
-DELETE https://display-case.herokuapp.com/diecasts/629009b4216a73411e78e960 HTTP/1.1
+DELETE https://display-case.herokuapp.com/diecasts/62ae401d65bf4e2670e9c83e HTTP/1.1
