@@ -5,7 +5,7 @@ const connect = require('./db/connect.ts');
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
-app.use('/', require('./routes'));
+app.use('/', require('./routes/index.ts'));
 app.use(express.static(__dirname + '/public')); // Gets CSS working
 
 connect.initDatabase();
