@@ -1,10 +1,13 @@
 {
    "compilerOptions": {
-       "outDir": "./dist",
-       "allowJs": true,
-       "target": "es5"
+      "outDir": "./dist",
+      "allowJs": true,
+      "target": "es5"
    },
-       "include": [
-       "../display-case"
-   ]
+      "include": [
+         "./*"
+   ],
+      "exclude": [
+         "node_modules"
+      ]
 }
