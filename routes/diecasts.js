@@ -1,10 +1,5 @@
 const routes = require('express').Router();
 const diecastsController = require('../controllers/diecasts-controller');
-const path = require('path');
-
-// routes.get('/', (req, res) => {
-//    res.sendFile(path.join(__dirname + '/../views/diecasts.html'));
-// });
 
 routes.get('/', diecastsController.getDiecasts);        // Get all diecasts
 routes.get('/:id', diecastsController.getDiecast)       // Get one diecast

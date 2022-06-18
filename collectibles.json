@@ -1,17 +1,30 @@
 [
    {
       "name": "NASCAR: The Complete History",
-      "type": "book",
       "description": "Big history book about cars racing in circles."
    },
    {
       "name": "Kevin Harvick Lanyard",
-      "type": "lanyard",
       "description": "Kevin Harvick lanyard used for race tickets and passes."
    },
    {
       "name": "Chase Elliot Lanyard",
-      "type": "lanyard",
       "description": "Chase Elliot lanyard used for race tickets and passes."
-   }   
+   }, 
+   {
+      "name": "Pennzoil Towel",
+      "description": "Souvenier I got from the 2022 Las Vegas spring race"
+   }, 
+   {
+      "name": "Cup Series Coozie",
+      "description": "Beverage coozie I got from beating my dad at a reaction test outside of Las Vegas Motor Speedway in Spring 2022."
+   }, 
+   {
+      "name": "California License Plate",
+      "description": "Old license place from California"
+   },
+   {
+      "name": "Florida License Plate",
+      "description": "Old license place from Florida"
+   }
 ]

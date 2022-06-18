@@ -5,7 +5,7 @@ const ObjectId = require('mongodb').ObjectId;
 // Get all diecasts
 const getDiecasts = async (req, res) => {
    try {
-      const result = connect.getCollection().find();
+      const result = connect.getCollection("diecasts").find();
       result.toArray().then((documents) => {
          res.status(200).json(documents);
       });
@@ -18,7 +18,7 @@ const getDiecasts = async (req, res) => {
 const getDiecast = async (req, res) => {
    try {
       const diecastId = new ObjectId(req.params.id);
-      const result = connect.getCollection().find({ _id: diecastId });
+      const result = connect.getCollection("diecasts").find({ _id: diecastId });
       result.toArray().then((documents) => {
          res.status(200).json(documents[0]);
       });
@@ -49,7 +49,7 @@ const addDiecast = async (req, res) => {
          return;
       }
       
-      const response = await connect.getCollection().insertOne(diecast);
+      const response = await connect.getCollection("diecasts").insertOne(diecast);
 
       if (response.acknowledged) {
          res.status(201).json(response);
@@ -84,7 +84,7 @@ const editDiecast = async (req, res) => {
       }
       
       const diecastId = new ObjectId(req.params.id);
-      const response = await connect.getCollection().replaceOne({ _id: diecastId }, diecast);
+      const response = await connect.getCollection("diecasts").replaceOne({ _id: diecastId }, diecast);
 
       if (response.modifiedCount > 0) {
          res.status(204).send();
@@ -100,7 +100,7 @@ const editDiecast = async (req, res) => {
 const deleteDiecast = async (req, res) => {
    try {
       const diecastId = new ObjectId(req.params.id);
-      const response = await connect.getCollection().remove({ _id: diecastId }, true);
+      const response = await connect.getCollection("diecasts").remove({ _id: diecastId }, true);
       if (response.deletedCount > 0) {
          res.status(204).send();
       } else {
