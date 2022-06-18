@@ -1,11 +1,11 @@
-const connect = require('../db/connect');
-const validator = require('../utils/validator')
-const ObjectId = require('mongodb').ObjectId;
+const connectDiecasts = require('../db/connect');
+const validatorDiecasts = require('../utils/validator')
+const ObjectIdDiecasts = require('mongodb').ObjectId;
 
 // Get all diecasts
 const getDiecasts = async (req, res) => {
    try {
-      const result = connect.getCollection("diecasts").find();
+      const result = connectDiecasts.getCollection("diecasts").find();
       result.toArray().then((documents) => {
          res.status(200).json(documents);
       });
@@ -17,8 +17,8 @@ const getDiecasts = async (req, res) => {
 // Get one diecast by id
 const getDiecast = async (req, res) => {
    try {
-      const diecastId = new ObjectId(req.params.id);
-      const result = connect.getCollection("diecasts").find({ _id: diecastId });
+      const diecastId = new ObjectIdDiecasts(req.params.id);
+      const result = connectDiecasts.getCollection("diecasts").find({ _id: diecastId });
       result.toArray().then((documents) => {
          res.status(200).json(documents[0]);
       });
@@ -43,13 +43,13 @@ const addDiecast = async (req, res) => {
       };
 
       // Validate
-      let validatorMessage = validator.checkDiecast(diecast);
-      if (validatorMessage != "valid") {
-         res.status(400).send({ message: validatorMessage });
+      let validatorDiecastsMessage = validatorDiecasts.checkDiecast(diecast);
+      if (validatorDiecastsMessage != "valid") {
+         res.status(400).send({ message: validatorDiecastsMessage });
          return;
       }
       
-      const response = await connect.getCollection("diecasts").insertOne(diecast);
+      const response = await connectDiecasts.getCollection("diecasts").insertOne(diecast);
 
       if (response.acknowledged) {
          res.status(201).json(response);
@@ -77,14 +77,14 @@ const editDiecast = async (req, res) => {
       };
       
       // Validate
-      let validatorMessage = validator.checkDiecast(diecast);
-      if (validatorMessage != "valid") {
-         res.status(400).send({ message: validatorMessage });
+      let validatorDiecastsMessage = validatorDiecasts.checkDiecast(diecast);
+      if (validatorDiecastsMessage != "valid") {
+         res.status(400).send({ message: validatorDiecastsMessage });
          return;
       }
       
-      const diecastId = new ObjectId(req.params.id);
-      const response = await connect.getCollection("diecasts").replaceOne({ _id: diecastId }, diecast);
+      const diecastId = new ObjectIdDiecasts(req.params.id);
+      const response = await connectDiecasts.getCollection("diecasts").replaceOne({ _id: diecastId }, diecast);
 
       if (response.modifiedCount > 0) {
          res.status(204).send();
@@ -99,8 +99,8 @@ const editDiecast = async (req, res) => {
 // Delete a diecast
 const deleteDiecast = async (req, res) => {
    try {
-      const diecastId = new ObjectId(req.params.id);
-      const response = await connect.getCollection("diecasts").remove({ _id: diecastId }, true);
+      const diecastId = new ObjectIdDiecasts(req.params.id);
+      const response = await connectDiecasts.getCollection("diecasts").remove({ _id: diecastId }, true);
       if (response.deletedCount > 0) {
          res.status(204).send();
       } else {

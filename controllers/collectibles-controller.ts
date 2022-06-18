@@ -1,11 +1,11 @@
-const connect = require('../db/connect');
-const validator = require('../utils/validator')
-const ObjectId = require('mongodb').ObjectId;
+const connectCollectibles = require('../db/connect');
+const validatorCollectibles = require('../utils/validator')
+const ObjectIdCollectbiles = require('mongodb').ObjectId;
 
 // Get all collectibles
 const getCollectibles = async (req, res) => {
    try {
-      const result = connect.getCollection("collectibles").find();
+      const result = connectCollectibles.getCollection("collectibles").find();
       result.toArray().then((documents) => {
          res.status(200).json(documents);
       });
@@ -17,8 +17,8 @@ const getCollectibles = async (req, res) => {
 // Get one collectible by id
 const getCollectible = async (req, res) => {
    try {
-      const collectibleId = new ObjectId(req.params.id);
-      const result = connect.getCollection("collectibles").find({ _id: collectibleId });
+      const collectibleId = new ObjectIdCollectbiles(req.params.id);
+      const result = connectCollectibles.getCollection("collectibles").find({ _id: collectibleId });
       result.toArray().then((documents) => {
          res.status(200).json(documents[0]);
       });
@@ -36,13 +36,13 @@ const addCollectible = async (req, res) => {
       };
 
       // Validate
-      let validatorMessage = validator.checkCollectible(collectible);
-      if (validatorMessage != "valid") {
-         res.status(400).send({ message: validatorMessage });
+      let validatorCollectiblesMessage = validatorCollectibles.checkCollectible(collectible);
+      if (validatorCollectiblesMessage != "valid") {
+         res.status(400).send({ message: validatorCollectiblesMessage });
          return;
       }
       
-      const response = await connect.getCollection("collectibles").insertOne(collectible);
+      const response = await connectCollectibles.getCollection("collectibles").insertOne(collectible);
 
       if (response.acknowledged) {
          res.status(201).json(response);
@@ -63,14 +63,14 @@ const editCollectible = async (req, res) => {
       };
       
       // Validate
-      let validatorMessage = validator.checkCollectible(collectible);
-      if (validatorMessage != "valid") {
-         res.status(400).send({ message: validatorMessage });
+      let validatorCollectiblesMessage = validatorCollectibles.checkCollectible(collectible);
+      if (validatorCollectiblesMessage != "valid") {
+         res.status(400).send({ message: validatorCollectiblesMessage });
          return;
       }
       
-      const collectibleId = new ObjectId(req.params.id);
-      const response = await connect.getCollection("collectibles").replaceOne({ _id: collectibleId }, collectible);
+      const collectibleId = new ObjectIdCollectbiles(req.params.id);
+      const response = await connectCollectibles.getCollection("collectibles").replaceOne({ _id: collectibleId }, collectible);
 
       if (response.modifiedCount > 0) {
          res.status(204).send();
@@ -85,8 +85,8 @@ const editCollectible = async (req, res) => {
 // Delete a collectible
 const deleteCollectible = async (req, res) => {
    try {
-      const collectibleId = new ObjectId(req.params.id);
-      const response = await connect.getCollection("collectibles").remove({ _id: collectibleId }, true);
+      const collectibleId = new ObjectIdCollectbiles(req.params.id);
+      const response = await connectCollectibles.getCollection("collectibles").remove({ _id: collectibleId }, true);
       if (response.deletedCount > 0) {
          res.status(204).send();
       } else {
