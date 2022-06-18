@@ -215,31 +215,10 @@
             "schema": {
               "type": "object",
               "properties": {
-                "carNumber": {
+                "name": {
                   "example": "any"
                 },
-                "make": {
-                  "example": "any"
-                },
-                "model": {
-                  "example": "any"
-                },
-                "year": {
-                  "example": "any"
-                },
-                "scale": {
-                  "example": "any"
-                },
-                "sponsor": {
-                  "example": "any"
-                },
-                "driverFirst": {
-                  "example": "any"
-                },
-                "driverLast": {
-                  "example": "any"
-                },
-                "imageUrl": {
+                "description": {
                   "example": "any"
                 }
               }
@@ -294,31 +273,10 @@
             "schema": {
               "type": "object",
               "properties": {
-                "carNumber": {
+                "name": {
                   "example": "any"
                 },
-                "make": {
-                  "example": "any"
-                },
-                "model": {
-                  "example": "any"
-                },
-                "year": {
-                  "example": "any"
-                },
-                "scale": {
-                  "example": "any"
-                },
-                "sponsor": {
-                  "example": "any"
-                },
-                "driverFirst": {
-                  "example": "any"
-                },
-                "driverLast": {
-                  "example": "any"
-                },
-                "imageUrl": {
+                "description": {
                   "example": "any"
                 }
               }
