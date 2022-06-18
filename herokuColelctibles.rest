@@ -1,0 +1,24 @@
+### HEROKU TESTS ###
+
+### Get all collectibles
+GET https://display-case.herokuapp.com/collectibles
+### Get one collectible
+GET https://display-case.herokuapp.com/collectibles/628695fcc6e35cafb6ecdf7c
+### Create collectible
+POST https://display-case.herokuapp.com/collectibles HTTP/1.1
+content-type: application/json
+
+{
+   "name": "Heroku Collectible Test",
+   "description": "Decription for Heroku Collectible Test",
+}
+### Update collectible
+PUT https://display-case.herokuapp.com/collectibles/629009b4216a73411e78e960 HTTP/1.1
+content-type: application/json
+
+{
+   "name": "Heroku Collectible Test EDITED",
+   "description": "Decription for Heroku Collectible Test EDITED",
+}
+### Delete collectible (replace ID)
+DELETE https://display-case.herokuapp.com/collectibles/629009b4216a73411e78e960 HTTP/1.1

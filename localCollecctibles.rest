@@ -1,0 +1,24 @@
+### LOCAL TESTS ###
+
+### Get all collectibles
+GET http://localhost:3000/collectibles
+### Get one collectible
+GET http://localhost:3000/collectibles/628695fcc6e35cafb6ecdf7c
+### Create collectible
+POST http://localhost:3000/collectibles HTTP/1.1
+content-type: application/json
+
+{
+   "name": "Test Collectible",
+   "description": "Decription for Test Collectible"
+}
+### Update collectible
+PUT http://localhost:3000/collectibles/6290087878d42a2b68a9887b HTTP/1.1
+content-type: application/json
+
+{
+   "name": "Test Collectible EDITED",
+   "description": "Decription for Test Collectible EDITED"
+}
+### Delete collectible (replace ID)
+DELETE http://localhost:3000/collectibles/62ae3d0b310d9d3adb67f033 HTTP/1.1
