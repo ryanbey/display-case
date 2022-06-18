@@ -3,8 +3,8 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 let _client;
-let _collectionDiecasts: string;
-let _collectionCollectibles: string;
+let _collectionDiecasts;
+let _collectionCollectibles;
 
 const initDatabase = () => {
    MongoClient.connect(process.env.MONGODB_URI, (err, client) => {
@@ -16,7 +16,7 @@ const initDatabase = () => {
    });
 };
 
-const getCollection = (collection: string) => {
+const getCollection = (collection) => {
    if (collection === "diecasts") {
       return _collectionDiecasts;
    }
