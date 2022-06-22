@@ -1,0 +1,7 @@
+Install packages
+   npm i typescript ts-node awesome-typescript-loader source-map-loader
+Change all file extensions
+Add ".ts" to imports that use ts files (not packages)
+Create tsconfig
+Create webpack config
+create .npmrc
